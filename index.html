@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Shreesks</title>
+    <style>
+       body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        #passwordInput {
+            padding: 10px;
+            margin: 10px;
+        }
+        h1{
+            font-size: 50px;
+        }
+        p{
+            font-size: 35px;
+        }
+        button {
+ --glow-color: rgb(217, 176, 255);
+ --glow-spread-color: rgba(191, 123, 255, 0.781);
+ --enhanced-glow-color: rgb(231, 206, 255);
+ --btn-color: rgb(100, 61, 136);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+}
+
+button::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+    </style>
+</head>
+<body>
+
+<div id="passwordInput">
+    <h1>Welcome Shreesks, how are you?</h1>
+    <p>damn bro</p>
+    <label for="password">Enter Password <br> (hint its someone special, but for me, he is just shit actually, the biggest shit to be more precise): </label>
+    <input type="password" id="password">
+    <button onclick="checkPassword()">Submit</button>
+</div>
+
+<div id="mainContent" style="display:none;">
+    <h1>Oh finally you're here. Welcome Shreesks, how are you?</h1>
+
+    <div id="buttons">
+        <button onclick="notFeelingWell()">Not feeling well</button>
+        <button onclick="feelingWell()">Feeling well</button>
+    </div>
+
+</div>
+
+<script>
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        if (password.toLowerCase() === "roshit" || password.toLowerCase() === "roshit") {
+            document.getElementById("passwordInput").style.display = "none";
+            document.getElementById("mainContent").style.display = "block";
+        } else {
+            alert("Incorrect password. Try again. Damn Shreeska, how can you be so wrong? It's someone special to you, and yes, it is for security purposes only. Hai feri");
+        }
+    }
+
+    function notFeelingWell() {
+        document.getElementById("mainContent").innerHTML = `
+            <h1>Not feeling well? then you can do this</h1>
+            <p>1.Watch series like 'End of the f World', it's pretty good.</p>
+            <p>2. start reading DSA or C++, it will make your mood good. dont belive me try it yourself.</p>
+            <p>Still not feeling well? <a href="https://www.youtube.com/watch?v=56lkofpjOAs&ab_channel=MacPaverick" target="_blank">Watch this video</a> and come after you finished it</p>
+            <button onclick="feelingWell()">No I think I'm feeling well now</button>
+        `;
+    }
+
+    function feelingWell() {
+        document.getElementById("mainContent").innerHTML = `
+            <h1>Feeling well?</h1>
+            <p>Ok good then... Uff, I just had started making this website. It's so boring work.</p>
+            <p>I could not find anything beautiful photo of you, but I found... Oh, forget about it. I was about to say something.</p>
+            <p>Do you miss Nepal? </p>
+            <button onclick="missNepalYes()">Yes</button>
+            <button onclick="missNepalNo()">No</button>
+        `;
+    }
+
+    function missNepalYes() {
+        document.getElementById("mainContent").innerHTML = `
+            <h1>If yes, then please don't do that here; it's quite boring. I just want to escape from here.</h1>
+            <p>Tara j vyaa ne vane matra hola ne yad ta last aauncha hola ne. Anyway, don't be sad bro, remember you got lots of friends, I mean you have won lots of friends in your life, like not just a friend kind of soul friend.
+            Ane yea maila yo tesia vaneko haina ne feri subina haru bata ne suneko ho ane aaru bata ne so vani rako ho. So don't be sad my friend. still felling sad watch this <a href="https://youtu.be/_12ID7AbLSU?feature=shared">click here</a></p>
+            <button onclick="missNepalNo()">Ok I Wont</button>    
+            `;
+    }
+
+    function missNepalNo() {
+        document.getElementById("mainContent").innerHTML = `
+            <h1>but you shoud miss nepal yr .</h1>
+            <p>.Anyway jocks aside Yk aaja bihana vahar k mobile kholeko ane ig kholeko the k ane tya first mha shit ko ig story dekhe k ane k ryacha vanera herako timro brithday rayacha so, malai ne story halna man layo k tara feri hya k hanu ramro photo nai xaina vane thane k, ane haii mero mobille scrool gardai gaya k ane timro aayta dami photo rayacha k.
+            Hold up let me show you it hai ta <img src="bro.jpg" width="300" alt="Bro Image">see you look too cute k 🤣, what were you doing k lol, it's just too random shot k.
+            Like I don't even know k tyo mero mobile mha kata bata aayo vanera. Tara I guesss tyo sayad Phokara tour jada ko ne malai halka yad aayo.
+            Any way bro hai hami aaba testo kai memory ta xaina hai boleko or kataki gako hai, tara xa ne tyo timi baira janu vanda aagai aako thayo ta tya Gadeshthan yk at that time I feel like koi sathi ryacha yr jo janu vanda aagai vetna ta aayo ne vane jasto k.
+            Like sachi ramro layoyr bro. Like aaba kta ho testo ramo sanga fellings ta express garna aaudaina hai ane mha sanga timi lai dina lai aaba  Breguet Marie-Antoinette Grande Complication Pocket Watch , Rolls-Royce Boat Tail , ane alienware ta xaina hai
+              , hyaa mha feri flow bata baira pugechu , anyway happy birthy bro ali late vayo x hai wish garna lai. Aa sachi timro name ko spelling wrong xa hai malai tyo correction gari rakha bor layo k so tetekai xodeko hai.</p>
+        `;
+    }
+
+    function feelingWellAgain() {
+        document.getElementById("mainContent").innerHTML = `
+            <h1>Oh finally you're here. Welcome Shreesks, how are you?</h1>
+            <div id="passwordInput">
+                <label for="password">Enter Password: </label>
+                <input type="password" id="password">
+                <button onclick="checkPassword()">Submit</button>
+            </div>
+            <div id="buttons">
+                <button onclick="notFeelingWell()">Not feeling well</button>
+                <button onclick="feelingWell()">Feeling well</button>
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
